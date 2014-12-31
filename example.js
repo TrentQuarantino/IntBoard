@@ -1,5 +1,7 @@
 var el = document.getElementById('c');
 var ctx = el.getContext('2d');
+var newel = document.getElementById("new");
+var ctxnew = newel.getContext("2d");
 var isDrawing;
 var posX;
 var posY;
@@ -38,6 +40,10 @@ function save() {
   var canvas  = document.getElementById("c");
   var dataUrl = canvas.toDataURL();
   window.open(dataUrl, "toDataURL() image", "width=400, height=300");
+}
+
+function copy() {
+  ctxnew.drawImage(el, 0, 0);
 }
 /*
 http://www.codicode.com/art/how_to_draw_on_a_html5_canvas_with_a_mouse.aspx
